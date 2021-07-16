@@ -1,0 +1,27 @@
+<h1>Calculator</h1>
+<table>
+  <tr>
+    <td>Number 1:</td>
+    <td><input type="number" placeholder="Input number 1" name="number1" [(ngModel)]="number1">
+    </td>
+  </tr>
+  <tr>
+    <td>Number 2:
+    </td>
+    <td><input type="number" placeholder="Input number 1" name="number1" [(ngModel)]="number2">
+    </td>
+  </tr>
+  <tr>
+    <td>Result:
+    </td>
+    <td>  <input type="number" placeholder="Input number 1" name="number1" [(ngModel)]="result">
+    </td>
+  </tr>
+</table>
+<br>
+<button (click)="add()">+</button>
+<button (click)="sub()">-</button>
+<button (click)="mul()">x</button>
+<button (click)="div()">/</button>
+
+
