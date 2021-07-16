@@ -1,0 +1,12 @@
+<p>Color picker
+</p>
+<button (click)="changeColor('red')" >Red</button>
+<button (click)="changeColor('blue')" >Blue</button>
+<button (click)="changeColor('green')" >Green</button>
+<button (click)="changeColor('yellow')" >Yellow</button>
+<button (click)="changeColor('black')" >Black</button>
+<button (click)="changeColor('white')" >White</button>
+<button (click)="changeColor('orange')" >Orange</button>
+
+
+<div style=" height: 50px; width: 50px" [style.background-color]="color"></div>
