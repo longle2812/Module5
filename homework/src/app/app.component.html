@@ -1,0 +1,4 @@
+<app-list-product [products]="products"></app-list-product>
+<button (click)="showCreateForm()">Show Create Form</button>
+<app-create-product *ngIf="showCreate" [products]="products" (addNewProduct)="addProduct($event)"></app-create-product>
+
