@@ -9,6 +9,8 @@ import {Product} from './product/product';
 export class AppComponent {
   title = 'homework';
   showCreate = false;
+  showEdit = false;
+  editProduct?: Product;
   products: Product[] = [{
     id: 1,
     name: 'Banana',
@@ -29,4 +31,26 @@ export class AppComponent {
   addProduct(event) {
     this.products = event;
   }
+
+  showEditForm(event) {
+    this.showEdit = true;
+  }
+
+  getEditProduct(event) {
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].id === event) {
+        this.editProduct = this.products[i];
+      }
+    }
+  }
+
+  closeEditForm(event) {
+    this.showEdit = event;
+  }
+
+  closeCreateForm(event) {
+    this.showCreate = event;
+  }
+
+
 }

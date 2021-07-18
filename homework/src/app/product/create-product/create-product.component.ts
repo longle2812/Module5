@@ -11,6 +11,7 @@ export class CreateProductComponent implements OnInit {
   product: Product;
   @Input() products: Product[] = [];
   @Output() addNewProduct = new EventEmitter<Product[]>();
+  @Output() closeCreate = new EventEmitter<boolean>();
 
   constructor() {
   }
@@ -21,6 +22,10 @@ export class CreateProductComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  closeCreateForm() {
+    this.closeCreate.emit(false);
   }
 
 }

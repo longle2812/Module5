@@ -5,6 +5,8 @@
     <th>Name</th>
     <th>Price</th>
     <th>Description</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
   </thead>
   <tbody>
@@ -13,6 +15,12 @@
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
+    <td>
+      <button class="btn btn-warning" (click)="showEditForm(product.id)">Edit</button>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+    </td>
   </tr>
   </tbody>
 </table>

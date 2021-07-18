@@ -1,4 +1,8 @@
-<app-list-product [products]="products"></app-list-product>
-<button (click)="showCreateForm()">Show Create Form</button>
-<app-create-product *ngIf="showCreate" [products]="products" (addNewProduct)="addProduct($event)"></app-create-product>
+<app-list-product [products]="products" (isShowEdit)="showEditForm($event)" [showEdit]="showEdit"
+                  (productId) ="getEditProduct($event)">
+</app-list-product>
+<button class="btn btn-outline-success" (click)="showCreateForm()">Show Create Form</button>
+<app-create-product *ngIf="showCreate" [products]="products" (addNewProduct)="addProduct($event)" (closeCreate)="closeCreateForm($event)"></app-create-product>
+<app-edit-product *ngIf="showEdit" [editProduct]="editProduct" (closeEdit)="closeEditForm($event)"></app-edit-product>
+
 

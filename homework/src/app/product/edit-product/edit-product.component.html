@@ -1,0 +1,20 @@
+<h3> Edit product </h3>
+<form #f="ngForm" novalidate>
+  <div class="mb-3">
+    <label for="id" class="form-label">Id</label>
+    <input type="number" class="form-control w-25" id="id" name="id" [(ngModel)]="editProduct.id">
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control w-25" id="name" name="name" [(ngModel)]="editProduct.name">
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input type="number" class="form-control w-25" id="price" name="price" [(ngModel)]="editProduct.price">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input type="text" class="form-control w-50" id="description" name="description" [(ngModel)]="editProduct.description">
+  </div>
+  <button class="btn btn-secondary" (click)="closeEditForm()" >Close</button>
+</form>
