@@ -1,0 +1,13 @@
+<h3>Từ điển</h3>
+<table>
+  <tr>
+    <td>#</td>
+    <td>Word</td>
+  </tr>
+  <tr *ngFor="let word of dictionary, index as i">
+    <td>{{i+1}}</td>
+    <td><a [routerLink]="['/dictionary/list', word.id]">{{word.name}}</a></td>
+  </tr>
+</table>
+
+<router-outlet></router-outlet>
