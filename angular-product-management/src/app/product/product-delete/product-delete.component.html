@@ -1,0 +1,20 @@
+<h1>Xoá sản phẩm</h1>
+<table>
+  <tr>
+    <td>Id:</td>
+    <td>{{product.id}}</td>
+  </tr>
+  <tr>
+    <td>Name:</td>
+    <td>{{product.name}}</td>
+  </tr>
+  <tr>
+    <td>Price:</td>
+    <td>{{product.price}}</td>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td>{{product.description}}</td>
+  </tr>
+  <button><a routerLink="/product/list" (click)="deleteProduct(product.id)">Xoá</a></button>
+</table>

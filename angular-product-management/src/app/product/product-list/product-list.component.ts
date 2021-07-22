@@ -14,10 +14,12 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAll();
+    this.productService.getAll().subscribe(
+      products => {
+        this.products = products;
+      },
+      e => console.log('Error')
+    );
   }
 
-  private getAll() {
-    this.products = this.productService.getAll();
-  }
 }
