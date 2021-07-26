@@ -4,6 +4,7 @@
     <td>ID</td>
     <td>Tên</td>
     <td>Giá</td>
+    <td>Category</td>
     <td>Mô tả</td>
     <td>Xoá</td>
   </tr>
@@ -11,6 +12,7 @@
     <td>{{product.id}}</td>
     <td><a routerLink="/product/{{product.id}}">{{product.name}}</a> </td>
     <td>{{product.price}}</td>
+    <td>{{product.category.name}}</td>
     <td>{{product.description}}</td>
     <td><a routerLink="/product/delete/{{product.id}}">Xoá</a></td>
   </tr>

@@ -4,11 +4,14 @@ import {ProductListComponent} from './product/product-list/product-list.componen
 import {ProductCreateComponent} from './product/product-create/product-create.component';
 import {ProductDetailComponent} from './product/product-detail/product-detail.component';
 import {ProductDeleteComponent} from './product/product-delete/product-delete.component';
+import {LoginComponent} from './login/login.component';
+import {AuthGuard} from './helper/auth-guard';
 
 
 const routes: Routes = [
   {
     path: 'product/list',
+    canActivate: [AuthGuard],
     component: ProductListComponent
   },
   {
@@ -23,6 +26,10 @@ const routes: Routes = [
     path: 'product/delete/:id',
     component: ProductDeleteComponent
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
 ];
 
 @NgModule({
