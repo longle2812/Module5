@@ -1,20 +1,37 @@
-<h1>Xoá sản phẩm</h1>
-<table>
-  <tr>
-    <td>Id:</td>
-    <td>{{product.id}}</td>
-  </tr>
-  <tr>
-    <td>Name:</td>
-    <td>{{product.name}}</td>
-  </tr>
-  <tr>
-    <td>Price:</td>
-    <td>{{product.price}}</td>
-  </tr>
-  <tr>
-    <td>Description:</td>
-    <td>{{product.description}}</td>
-  </tr>
-  <button><a routerLink="/products/list" (click)="deleteProduct(product.id)">Xoá</a></button>
-</table>
+<div class="app-page-title">
+  <div class="page-title-wrapper">
+    <div class="page-title-heading">
+      <div class="page-title-icon">
+        <i class="pe-7s-display1 icon-gradient bg-premium-dark">
+        </i>
+      </div>
+      <div>Product Details
+        <div class="page-title-subheading">Additional details of product
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-card mb-3 card">
+  <div class="card-body"><h5 class="card-title">Product Detail: {{product.name}}</h5>
+      <div class="position-relative row form-group"><label class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">{{product.name}}</div>
+      </div>
+      <div class="position-relative row form-group"><label class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10">{{product.price}}</div>
+      </div>
+      <div class="position-relative row form-group"><label class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10">{{product.category.name}}</div>
+      </div>
+      <div class="position-relative row form-group"><label class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">{{product.description}}</div>
+      </div>
+      <div class="position-relative row form-check">
+        <div class="col-sm-10 offset-sm-2">
+          <a class="btn btn-danger" routerLink="/products/list" (click)="deleteProduct(product.id)" style="margin-left: -20px">Delete</a>
+          <a routerLink="/products/list" class="btn btn-secondary" style="margin-left: 20px"> Back</a>
+        </div>
+      </div>
+  </div>
+</div>

@@ -12,6 +12,7 @@ import {Category} from '../../model/category';
 })
 export class ProductDetailComponent implements OnInit {
   categories: Category[] = [];
+  productName: string;
   productForm: FormGroup = new FormGroup({
     id: new FormControl(),
     name: new FormControl(),
@@ -28,6 +29,7 @@ export class ProductDetailComponent implements OnInit {
         const id = paramMap.get('id');
         this.productService.getProductById(id).subscribe(
           product => {
+            this.productName = product.name;
             this.productForm.setValue(product);
             this.productForm.patchValue({
               category: this.productForm.get('category').value.id

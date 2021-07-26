@@ -1,31 +1,45 @@
-<h1>Cập nhật sản phẩm</h1>
-<form [formGroup]="productForm" (ngSubmit)="edit()">
-  <table>
-    <tr>
-      <td>Tên sản phẩm:</td>
-      <td><input type="text" formControlName="name"></td>
-    </tr>
-    <tr>
-      <td>Giá sản phẩm</td>
-      <td><input type="number" formControlName="price"></td>
-    </tr>
-    <tr>
-      <td>Category</td>
-      <td>
-        <select formControlName="category">
+<div class="app-page-title">
+  <div class="page-title-wrapper">
+    <div class="page-title-heading">
+      <div class="page-title-icon">
+        <i class="pe-7s-display1 icon-gradient bg-premium-dark">
+        </i>
+      </div>
+      <div>Product Details
+        <div class="page-title-subheading">Additional details of product
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-card mb-3 card">
+  <div class="card-body"><h5 class="card-title">Product Detail: {{productName}}</h5>
+    <form class="" [formGroup]="productForm" (ngSubmit)="edit()">
+      <div class="position-relative row form-group"><label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10"><input id="name" type="text" formControlName="name" class="form-control"></div>
+      </div>
+      <div class="position-relative row form-group"><label for="price" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-10"><input id="price" type="text" formControlName="price" class="form-control"></div>
+      </div>
+      <div class="position-relative row form-group"><label for="category"
+                                                           class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10"><select formControlName="category" id="category" class="form-control">
           <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
         </select>
-      </td>
-    </tr>
-    <tr>
-      <td>Mô tả về sản phẩm</td>
-      <td><input type="text" formControlName="description"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <button>Cập nhật</button>
-      </td>
-    </tr>
-  </table>
-</form>
+        </div>
+      </div>
+      <div class="position-relative row form-group"><label for="description"
+                                                           class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10"><textarea id="description" type="text" formControlName="description"
+                                         class="form-control"></textarea></div>
+      </div>
+      <div class="position-relative row form-check">
+        <div class="col-sm-10 offset-sm-2">
+          <button class="btn btn-primary" style="margin-left: -20px">Submit</button>
+          <a routerLink="/products/list" class="btn btn-secondary" style="margin-left: 20px"> Back</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,19 +1,37 @@
-<h1>Danh sách sản phẩm</h1>
-<table>
+<div class="app-page-title">
+  <div class="page-title-wrapper">
+    <div class="page-title-heading">
+      <div class="page-title-icon">
+        <i class="pe-7s-drawer icon-gradient bg-happy-itmeo">
+        </i>
+      </div>
+      <div>Product List
+        <div class="page-title-subheading">Show all the product in storage
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="mb-2 mr-2 btn btn-success" routerLink="/products/create">Create new product</button>
+<table class="mb-0 table table-bordered">
+  <thead>
   <tr>
-    <td>ID</td>
-    <td>Tên</td>
-    <td>Giá</td>
-    <td>Category</td>
-    <td>Mô tả</td>
-    <td>Xoá</td>
+    <th>#</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Action</th>
   </tr>
+  </thead>
+  <tbody>
   <tr *ngFor="let product of products">
-    <td>{{product.id}}</td>
-    <td><a routerLink="/products/{{product.id}}">{{product.name}}</a> </td>
+    <td scope="row">{{product.id}}</td>
+    <td><a routerLink="/products/{{product.id}}">{{product.name}}</a></td>
     <td>{{product.price}}</td>
     <td>{{product.category.name}}</td>
     <td>{{product.description}}</td>
-    <td><a routerLink="/products/delete/{{product.id}}">Xoá</a></td>
+    <td><button routerLink="/products/delete/{{product.id}}" class="mb-2 mr-2 btn btn-danger">Delete</button></td>
   </tr>
+  </tbody>
 </table>
