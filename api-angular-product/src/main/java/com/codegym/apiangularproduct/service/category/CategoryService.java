@@ -1,34 +1,34 @@
-package com.codegym.apiangularproduct.service.product;
+package com.codegym.apiangularproduct.service.category;
 
-import com.codegym.apiangularproduct.model.Product;
-import com.codegym.apiangularproduct.repository.IProductRepository;
+import com.codegym.apiangularproduct.model.Category;
+import com.codegym.apiangularproduct.repository.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class ProductService implements IProductService{
+public class CategoryService implements ICategoryService {
     @Autowired
-    private IProductRepository productRepository;
+    private ICategoryRepository categoryRepository;
 
     @Override
-    public Iterable<Product> findAll() {
-        return productRepository.findAll();
+    public Iterable<Category> findAll() {
+        return categoryRepository.findAll();
     }
 
     @Override
-    public Optional<Product> findById(Long id) {
-        return productRepository.findById(id);
+    public Optional<Category> findById(Long id) {
+        return categoryRepository.findById(id);
     }
 
     @Override
-    public Product save(Product product) {
-        return productRepository.save(product);
+    public Category save(Category category) {
+        return categoryRepository.save(category);
     }
 
     @Override
     public void remove(Long id) {
-        productRepository.deleteById(id);
+        categoryRepository.deleteById(id);
     }
 }
