@@ -19,4 +19,5 @@ public class Product {
     private String description;
     @ManyToOne
     private Category category;
+    private String imgURL;
 }
