@@ -9,6 +9,9 @@ import { LoginComponent } from './login/login.component';
 import {JwtInterceptor} from './helper/jwt-interceptor';
 import {ErrorInterceptor} from './helper/error-interceptor';
 import {SharedModule} from './shared/shared.module';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorage, AngularFireStorageModule} from '@angular/fire/storage';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import {SharedModule} from './shared/shared.module';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
