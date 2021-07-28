@@ -5,8 +5,8 @@
         <i class="pe-7s-display1 icon-gradient bg-premium-dark">
         </i>
       </div>
-      <div>Product Details
-        <div class="page-title-subheading">Additional details of product
+      <div>Book Detail
+        <div class="page-title-subheading">Additional details of book
         </div>
       </div>
     </div>
@@ -14,27 +14,20 @@
 </div>
 
 <div class="main-card mb-3 card">
-  <div class="card-body"><h5 class="card-title">Product Detail: {{bookTitle}}</h5>
-    <form class="" [formGroup]="bookForm" (ngSubmit)="edit()">
-      <div class="position-relative row form-group"><label for="name" class="col-sm-2 col-form-label">Title</label>
-        <div class="col-sm-10"><input id="name" type="text" formControlName="title" class="form-control"></div>
+  <div class="card-body"><h5 class="card-title">Book Title: {{book.title}}</h5>
+    <div class="position-relative row form-group"><label class="col-sm-2 col-form-label">Title</label>
+      <div class="col-sm-10">{{book.title}}</div>
+    </div>
+    <div class="position-relative row form-group"><label class="col-sm-2 col-form-label">Author</label>
+      <div class="col-sm-10">{{book.author}}</div>
+    </div>
+    <div class="position-relative row form-group"><label class="col-sm-2 col-form-label">Description</label>
+      <div class="col-sm-10">{{book.description}}</div>
+    </div>
+    <div class="position-relative row form-check">
+      <div class="col-sm-10 offset-sm-2">
+        <a routerLink="/books/list" class="btn btn-secondary" style="margin-left: -20px"> Back</a>
       </div>
-      <div class="position-relative row form-group"><label for="price" class="col-sm-2 col-form-label">Author</label>
-        <div class="col-sm-10"><input id="price" type="text" formControlName="author" class="form-control"></div>
-      </div>
-      <div class="position-relative row form-group">
-        <label for="description" class="col-sm-2 col-form-label">Description</label>
-        <div class="col-sm-10">
-          <textarea id="description" type="text" formControlName="description"
-                    class="form-control"></textarea>
-        </div>
-      </div>
-      <div class="position-relative row form-check">
-        <div class="col-sm-10 offset-sm-2">
-          <button class="btn btn-primary" style="margin-left: -20px">Edit</button>
-          <a routerLink="/books/list" class="btn btn-secondary" style="margin-left: 20px"> Back</a>
-        </div>
-      </div>
-    </form>
+    </div>
   </div>
 </div>

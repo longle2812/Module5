@@ -27,7 +27,8 @@
     <td scope="row">{{book.id}}</td>
     <td><a routerLink="/books/{{book.id}}">{{book.title}}</a></td>
     <td>{{book.author}}</td>
-    <td><button routerLink="/books/delete/{{book.id}}" class="mb-2 mr-2 btn btn-danger">Delete</button></td>
+    <td><button routerLink="/books/edit/{{book.id}}" class="mb-2 mr-2 btn btn-info">Edit</button>||
+      <button routerLink="/books/delete/{{book.id}}" class="mb-2 mr-2 btn btn-danger">Delete</button></td>
   </tr>
   </tbody>
 </table>
