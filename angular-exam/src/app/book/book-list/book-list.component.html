@@ -1,0 +1,33 @@
+<div class="app-page-title">
+  <div class="page-title-wrapper">
+    <div class="page-title-heading">
+      <div class="page-title-icon">
+        <i class="pe-7s-drawer icon-gradient bg-happy-itmeo">
+        </i>
+      </div>
+      <div>Product List
+        <div class="page-title-subheading"><b>There are {{books.length}} books in storage</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="mb-2 mr-2 btn btn-success" routerLink="/books/create">Create new product</button>
+<table class="mb-0 table table-bordered">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books">
+    <td scope="row">{{book.id}}</td>
+    <td><a routerLink="/books/{{book.id}}">{{book.title}}</a></td>
+    <td>{{book.author}}</td>
+    <td><button routerLink="/books/delete/{{book.id}}" class="mb-2 mr-2 btn btn-danger">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
